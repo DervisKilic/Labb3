@@ -1,0 +1,234 @@
+@font-face {
+    font-family: '28days';
+    src: url('28 Days Later.ttf') format('truetype');
+}
+
+h1, h2, body{
+    font-family: "28days", "Comic Sans MS", Serif, serif;
+}
+
+h1{
+    text-align: center;
+    color: black;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+}
+
+.header{
+    background-color: white;
+    width: 80%;
+    margin-bottom: 0.8rem;
+    margin-right: 30%;
+    margin-left: 10%;
+    padding: 0.4rem;
+}
+
+body {
+    background-image: url("prison.jpg");
+    background-size:cover;
+}
+
+.validateButton {
+    background-color: white;
+    border: none;
+    color: black;
+    padding: 0.5rem 5rem;
+    text-align: center;
+    font-size: 1rem;
+    margin: 0.3rem 0.16rem;
+    cursor: pointer;
+    outline: none;
+}
+
+.validateButton:hover {
+    background-color: black;
+    color: white;
+}
+
+
+.validateButton:active {
+    background-color: white;
+    color: black;
+    transform: translateY(0.3rem);
+}
+
+#error {
+    color: darkgray;
+    text-align: center;
+}
+
+#personTable {
+    text-align: center;;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 10%;
+    background-color: white;
+}
+
+th, td {
+    padding: 1.25rem;
+    border: 0.08rem solid #CCC;
+    border-spacing: 0;
+
+}
+
+th {
+    background: #F3F3F3;
+    font-weight: bold;
+}
+
+td {
+    background: #FAFAFA;
+    text-align: center;
+}
+
+#contactForm{
+    text-align: center;
+    color: white;
+}
+
+#input{
+    display: none;
+}
+
+.nav {
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 5rem;
+    text-align: center;
+    padding-bottom: 1000%;
+}
+
+.nav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 2.1rem;
+    font-size: 3rem;
+    margin-left: 4.1rem;
+}
+
+#menu{
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.menuItems{
+    color: gray;
+    cursor: pointer;
+    font-size: 4rem;
+}
+.home:hover{
+    color: black;
+}
+
+.home:active{
+    color: gray;
+}
+
+.add:hover{
+    color: black;
+}
+
+.add:active{
+    color: gray;
+}
+
+footer{
+    text-align: center;
+    color: white;
+}
+
+.parallax {
+    perspective: 0.16rem;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.parallax__layer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.parallax__layer--base {
+    transform: translateZ(0rem);
+}
+.parallax__layer--back {
+    transform: translateZ(-0.08rem) scale(1);
+}
+
+.parallax__layer--back1 {
+    transform: translateZ(-0.33rem) scale(2);
+}
+.parallax__layer--back2 {
+    transform: translateZ(-0.41rem) scale(2);
+}
+.parallax__layer--back3 {
+    transform: translateZ(-0.33rem) scale(2);
+}
+.parallax__layer--back4 {
+    transform: translateZ(-0.16rem) scale(2);
+}
+.parallax__layer--back5 {
+    transform: translateZ(-0.58rem) scale(2);
+}
+.parallax__layer--back6 {
+    transform: translateZ(-0.25rem) scale(2);
+}
+
+.deletebtn{
+    color: black;
+    background: white;
+    border: white;
+}
+
+.deletebtn:hover{
+    color: white;
+    background: black;
+    cursor: pointer;
+}
+
+.t{
+    text-align: right;
+    font-size: 7rem;
+}
+
+.t1{
+    text-align: left;
+    font-size: 5rem;
+}
+
+.t2{
+    text-align: right;
+    font-size: 8rem;
+}
+
+.t3{
+    text-align: center;
+    font-size: 3rem;
+}
+.t4{
+    text-align: left;
+    font-size: 4rem;
+}
+
+.t5{
+    text-align: left;
+    font-size: 12rem;
+}
+
+.t6{
+    text-align: right;
+    font-size: 9rem;
+}

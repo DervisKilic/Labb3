@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+    <title>Labb2 - Validering</title>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="parallax">
+    <div class="parallax__layer--back">
+        <p class="t">Rån</p>
+    </div>
+    <div class="parallax__layer--back1">
+        <p class="t1">Våld</p>
+    </div>
+    <div class="parallax__layer--back2">
+        <p class="t2">Klotter</p>
+    </div>
+    <div class="parallax__layer--back3">
+        <p class="t3">Mord</p>
+    </div>
+    <div class="parallax__layer--back4">
+        <p class="t4">Misshandel</p>
+    </div>
+    <div class="parallax__layer--back5">
+        <p class="t5">Hot</p>
+    </div>
+    <div class="parallax__layer--back5">
+        <p class="t6">Cykelstöld</p>
+    </div>
+    <div class="parallax__layer parallax__layer--base">
+        <div id="mySidenav" class="nav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <div class="menuItems">
+                <p class="home" onclick="home()">Lista</p>
+                <p class="add" onclick="add()"> Lägg till</p>
+            </div>
+        </div>
+        <span id="menu" onclick="openNav()">&#9776; Meny</span>
+        <div class="header">
+            <h1>Brottsregistret</h1>
+        </div>
+        <section id="input">
+            <h2>Skriv in namn, brott och personnummer</h2>
+            <div id="contactForm" action="#">
+                <input id="name" type="text" placeholder="namn"/><br>
+                <input id="crime" type="text" placeholder="brott"/><br>
+                <input id="penalty" type="text" placeholder="straff"/><br>
+                <input id="perNumber" type="text" placeholder="yyyymmdd-nnnn"/><br>
+                <input type="button" onclick="validate()" value="Validera" class="validateButton"/>
+            </div>
+            <div>
+                <p id='error'></p>
+            </div>
+        </section>
+        <section>
+            <h2>Register</h2>
+            <table id='personTable'>
+                <tr>
+                    <th>Namn</th>
+                    <th>Ålder</th>
+                    <th>Personnummer</th>
+                    <th>Brott</th>
+                    <th>Straff</th>
+                    <th>Ta bort</th>
+                </tr>
+            </table>
+        </section>
+        <footer>
+            <p>Contact information: <a href="mailto:dervis85@gmail.com">
+                dervis85@gmail.com</a>.</p>
+        </footer>
+    </div>
+</div>
+
+</body>
+</html>
