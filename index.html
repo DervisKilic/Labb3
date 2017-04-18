@@ -1,14 +1,14 @@
 <!doctype html>
-<html>
+<html ng-app="labb3">
 <head>
     <title>Labb3 - Validering</title>
     <meta charset="utf-8">
-    <script type="text/javascript" src="script.js"></script>
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
 <div class="parallax">
     <div class="parallax__layer--back">
         <p class="t">Rån</p>
@@ -35,40 +35,20 @@
         <div id="mySidenav" class="nav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <div class="menuItems">
-                <p class="home" onclick="home()">Lista</p>
-                <p class="add" onclick="add()"> Lägg till</p>
+                <a class="list" ng-href="#!/list">Lista</a>
+                <a class="add" ng-href="#!/add">Lägg till</a>
+                <a class="about" ng-href="#!/about">Om</a>
             </div>
         </div>
         <span id="menu" onclick="openNav()">&#9776; Meny</span>
         <div class="header">
             <h1>Brottsregistret</h1>
         </div>
-        <section id="input">
-            <h2>Skriv in namn, brott och personnummer</h2>
-            <div id="contactForm" action="#">
-                <input id="name" type="text" placeholder="namn"/><br>
-                <input id="crime" type="text" placeholder="brott"/><br>
-                <input id="penalty" type="text" placeholder="straff"/><br>
-                <input id="perNumber" type="text" placeholder="yyyymmdd-nnnn"/><br>
-                <input type="button" onclick="validate()" value="Validera" class="validateButton"/>
-            </div>
-            <div>
-                <p id='error'></p>
-            </div>
-        </section>
-        <section>
-            <h2>Register</h2>
-            <table id='personTable'>
-                <tr>
-                    <th>Namn</th>
-                    <th>Ålder</th>
-                    <th>Personnummer</th>
-                    <th>Brott</th>
-                    <th>Straff</th>
-                    <th>Ta bort</th>
-                </tr>
-            </table>
-        </section>
+
+        <ng-view>
+
+        </ng-view>
+
         <footer>
             <p>Contact information: <a href="mailto:dervis85@gmail.com">
                 dervis85@gmail.com</a>.</p>
@@ -76,5 +56,8 @@
     </div>
 </div>
 
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script type="text/javascript" src="script.js"></script>
 </body>
 </html>

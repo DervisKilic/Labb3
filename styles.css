@@ -9,11 +9,11 @@ h1, h2, body{
 
 h1{
     text-align: center;
-    color: black;
+    color: gray;
 }
 
 h2 {
-    color: white;
+    color: gray;
     text-align: center;
 }
 
@@ -90,9 +90,6 @@ td {
     color: white;
 }
 
-#input{
-    display: none;
-}
 
 .nav {
     width: 0;
@@ -127,11 +124,11 @@ td {
     cursor: pointer;
     font-size: 4rem;
 }
-.home:hover{
+.list:hover{
     color: black;
 }
 
-.home:active{
+.list:active{
     color: gray;
 }
 
@@ -143,9 +140,17 @@ td {
     color: gray;
 }
 
+.about:hover{
+    color: black;
+}
+
+.about:active{
+    color: gray;
+}
+
 footer{
     text-align: center;
-    color: white;
+    color: gray;
 }
 
 .parallax {

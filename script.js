@@ -1,6 +1,9 @@
 /**
  * Created by Dervis on 21/03/17.
  */
+
+var app = angular.module('labb3', ['ngRoute']);
+
 var d1 = new Date();
 var day = ("0" + d1.getDate()).slice(-2);
 var month = ("0" + (d1.getMonth() + 1)).slice(-2);
@@ -11,10 +14,6 @@ if (JSON.parse(localStorage.getItem("savedList")) == null) {
     localStorage.setItem("savedList", JSON.stringify([]));
 }
 var personList = JSON.parse(localStorage.getItem("savedList"));
-
-window.onload = function () {
-    showList();
-};
 
 function checkAge(birthday) {
     var bday = birthday.slice(0, 8);
@@ -135,19 +134,26 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
 
-function add() {
-    var inputField = document.getElementById("input");
-    inputField.style.display = 'block';
+app.config(function ($routeProvider) {
+    $routeProvider
 
-    var table = document.getElementById("personTable");
-    table.style.display = 'none';
-}
+        .when('/list', {
+            templateUrl : 'list.html',
+            controller  : 'listController'
+        })
 
-function home() {
-    var inputField = document.getElementById("input");
-    inputField.style.display = 'none';
+        .when('/add', {
+            templateUrl : 'add.html',
+            controller  : 'addController'
+        })
 
-    var table = document.getElementById("personTable");
-    table.style.display = 'table';
-    window.location.reload(false);
-}
+        .when('/about', {
+            templateUrl : 'about.html',
+            controller  : 'listController'
+        });
+});
+
+
+app.controller('listController', function ($scope) {
+    showList();
+});
