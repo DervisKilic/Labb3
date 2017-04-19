@@ -1,13 +1,11 @@
 <section id="input">
     <h2>Skriv in namn, brott och personnummer</h2>
-    <div id="contactForm" action="#">
-        <input id="name" type="text" placeholder="namn"/><br>
-        <input id="crime" type="text" placeholder="brott"/><br>
-        <input id="penalty" type="text" placeholder="straff"/><br>
-        <input id="perNumber" type="text" placeholder="yyyymmdd-nnnn"/><br>
-        <input type="button" onclick="validate()" value="Validera" class="validateButton"/>
-    </div>
-    <div>
-        <p id='error'></p>
+    <div id="contactForm" action="#" ng-controller="addController">
+        <input ng-model="name" type="text" placeholder="namn"/><br>
+        <input ng-model="crime" type="text" placeholder="brott"/><br>
+        <input ng-model="penalty" type="text" placeholder="straff"/><br>
+        <input ng-model="perNumber" type="text" placeholder="yyyymmdd-nnnn"/><br>
+        <input type="button" ng-click="validate()" value="Validera" class="validateButton"/>
+        <p id='error' ng-bind="error"></p>
     </div>
 </section>

@@ -52,35 +52,7 @@ function checkIfCorrectNumber(birthday) {
     return sum == String(birthday).charAt(12);
 }
 
-function validate() {
-    document.getElementById("error").innerText = "";
-    var person = {};
-    var inputName = document.getElementById("name").value;
-    var inputCrime = document.getElementById("crime").value;
-    var inputPenalty = document.getElementById("penalty").value;
-    var inputBirthday = document.getElementById("perNumber").value;
 
-    person.fullName = inputName;
-    person.birthday = inputBirthday;
-    person.age = checkAge(person.birthday);
-    person.crime = inputCrime;
-    person.penalty = inputPenalty;
-
-    if (checkIfCorrectNumber(person.birthday)) {
-        if (checkIfExists(person.birthday)) {
-            document.getElementById("error").innerHTML = "Personnummeret finns redan.";
-        } else if (!(checkIfAdult(person.birthday))) {
-            document.getElementById("error").innerHTML = "Du är omyndig.";
-
-        } else {
-            personList.unshift(person);
-            document.getElementById("error").innerText = inputBirthday + " tilllagt.";
-            localStorage.setItem("savedList", JSON.stringify(personList));
-        }
-    } else {
-        document.getElementById("error").innerText = "Personnummeret är ogiltligt " + inputBirthday;
-    }
-}
 
 function showList() {
     personList = JSON.parse(localStorage.getItem("savedList"));
@@ -142,6 +114,16 @@ app.config(function ($routeProvider) {
             controller  : 'listController'
         })
 
+        .when('/', {
+            templateUrl : 'home.html',
+            controller  : 'homeController'
+        })
+
+        .when('/home', {
+            templateUrl : 'home.html',
+            controller  : 'homeController'
+        })
+
         .when('/add', {
             templateUrl : 'add.html',
             controller  : 'addController'
@@ -149,11 +131,44 @@ app.config(function ($routeProvider) {
 
         .when('/about', {
             templateUrl : 'about.html',
-            controller  : 'listController'
+            controller  : 'aboutController'
         });
 });
 
 
 app.controller('listController', function ($scope) {
     showList();
+});
+
+app.controller('addController', function ($scope) {
+    $scope.validate = function(){
+
+        var person = {};
+        var inputName = $scope.name;
+        var inputCrime = $scope.crime;
+        var inputPenalty = $scope.penalty;
+        var inputBirthday = $scope.perNumber;
+
+        person.fullName = inputName;
+        person.birthday = inputBirthday;
+        person.age = checkAge(person.birthday);
+        person.crime = inputCrime;
+        person.penalty = inputPenalty;
+
+        $scope.error = "";
+        if (checkIfCorrectNumber(person.birthday)) {
+            if (checkIfExists(person.birthday)) {
+                $scope.error = "Personnummeret finns redan.";
+            } else if (!(checkIfAdult(person.birthday))) {
+                $scope.error = "Du är omyndig.";
+
+            } else {
+                personList.unshift(person);
+                $scope.error = inputBirthday + " tilllagt.";
+                localStorage.setItem("savedList", JSON.stringify(personList));
+            }
+        } else {
+            $scope.error = "Personnummeret är ogiltligt " + inputBirthday;
+        }
+    }
 });

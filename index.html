@@ -3,7 +3,6 @@
 <head>
     <title>Labb3 - Validering</title>
     <meta charset="utf-8">
-
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -35,6 +34,7 @@
         <div id="mySidenav" class="nav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <div class="menuItems">
+                <a class="home" ng-href="#!/home">Hem</a><br>
                 <a class="list" ng-href="#!/list">Lista</a>
                 <a class="add" ng-href="#!/add">Lägg till</a>
                 <a class="about" ng-href="#!/about">Om</a>
@@ -44,11 +44,8 @@
         <div class="header">
             <h1>Brottsregistret</h1>
         </div>
-
         <ng-view>
-
         </ng-view>
-
         <footer>
             <p>Contact information: <a href="mailto:dervis85@gmail.com">
                 dervis85@gmail.com</a>.</p>
@@ -58,6 +55,6 @@
 
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
-<script type="text/javascript" src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

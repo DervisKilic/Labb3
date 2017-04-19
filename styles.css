@@ -124,6 +124,16 @@ td {
     cursor: pointer;
     font-size: 4rem;
 }
+
+.home:hover{
+    color: black;
+}
+
+.home:active{
+    color: gray;
+}
+
+
 .list:hover{
     color: black;
 }
