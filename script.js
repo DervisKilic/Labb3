@@ -116,12 +116,10 @@ app.config(function ($routeProvider) {
 
         .when('/', {
             templateUrl : 'home.html',
-            controller  : 'homeController'
         })
 
         .when('/home', {
             templateUrl : 'home.html',
-            controller  : 'homeController'
         })
 
         .when('/add', {
@@ -131,12 +129,11 @@ app.config(function ($routeProvider) {
 
         .when('/about', {
             templateUrl : 'about.html',
-            controller  : 'aboutController'
         });
 });
 
 
-app.controller('listController', function ($scope) {
+app.controller('listController', function () {
     showList();
 });
 
